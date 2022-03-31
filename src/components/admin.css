@@ -1,0 +1,38 @@
+/* .admin {
+    height: auto;
+    padding: 20px 10px;
+    display: flex;
+    background-color: white;
+    min-height: 79vh;
+}
+
+.admin section {
+    flex: 1;
+}
+
+.admin .form {
+    border: 1px solid white;
+    padding: 20px;
+    background-color: white;
+    margin: 0 50px;
+}
+
+.admin h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin .my-control {
+    margin-bottom: 13px;
+}
+
+.admion .my-control label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 7px;
+}
+
+.admin .my-control input {
+    width: 230px;
+} */
