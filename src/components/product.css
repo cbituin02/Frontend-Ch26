@@ -1,0 +1,26 @@
+.product {
+    border: 1px solid black;
+    display:inline-block;
+    margin: 5px;
+    padding: 5px;
+    color: darkcyan;
+    border-radius: 5px;
+    box-shadow: 5px 5px rgb(223, 223, 223);
+}
+
+.product .price .product {
+    display: block;
+}
+
+.product h2 {
+    color: black;
+}
+
+.product h3 {
+    text-decoration: underline;
+}
+
+.product img{
+    width: 200px;
+    height: 200px;
+}
