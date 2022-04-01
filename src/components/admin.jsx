@@ -5,15 +5,17 @@ import DataService from "../services/dataService";
 const Admin = () => {
   const [prod, setProd] = useState({});
   const [coupon, setCoupon] = useState({});
+  const [allCoupons, setAllCoupons] = useState([]);
+  const [allProds, setAllProds] = useState([]);
 
   const handleInputChange = (e) => {
-    var copy = prod;
+    var copy = { ...prod };
     copy[e.target.name] = e.target.value;
-    setProd(prod);
+    setProd(copy);
   };
 
   const handleCCChange = (e) => {
-    var copy = coupon;
+    var copy = { ...coupon };
     copy[e.target.name] = e.target.value;
     setCoupon(copy);
   };
@@ -23,6 +25,10 @@ const Admin = () => {
 
     let service = new DataService();
     service.saveProduct(prod);
+
+    let copy = [...allProds];
+    copy.push(prod);
+    setAllProds(copy);
   };
 
   const saveCoupon = () => {
@@ -30,6 +36,11 @@ const Admin = () => {
 
     let service = new DataService();
     service.saveCouponCode(coupon);
+
+    // NEVER EVER => allCoupons.push(coupon);
+    let copy = [...allCoupons];
+    copy.push(coupon);
+    setAllCoupons(copy);
   };
 
   return (
@@ -80,6 +91,14 @@ const Admin = () => {
             </button>
           </div>
         </div>
+
+        {allProds.map((prod, index) => (
+          <div>
+            <h5>
+              {prod.title} - ${prod.price}
+            </h5>
+          </div>
+        ))}
       </section>
 
       <section>
@@ -95,6 +114,14 @@ const Admin = () => {
           <button onClick={saveCoupon} className="btn btn-dark">
             Save Coupon
           </button>
+        </div>
+
+        <div className="coupon-list">
+          {allCoupons.map((coupon, index) => (
+            <div key={index}>
+              <label>{coupon.code}</label> - <label>{coupon.discount}</label>
+            </div>
+          ))}
         </div>
       </section>
     </div>

@@ -7,7 +7,7 @@ const GlobalState = (props) => {
 
   const addProdToCart = (prod) => {
     console.log("adding prod to state");
-    
+
     let copy = [...cart];
     copy.push(prod);
     setCart(copy);
